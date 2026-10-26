@@ -185,6 +185,7 @@ lib/
 | Leer `localStorage` en el render provoca errores de hidratación | Toda lectura pasa por `useUser()` con snapshot de servidor `null`. |
 | `localStorage` no disponible (modo privado) o JSON corrupto | `lib/session.ts` envuelve lecturas/escrituras en `try/catch` y cae a `null` / `[]`. |
 | `setInterval` del reproductor sigue corriendo al salir | Limpiar el intervalo en el cleanup del efecto, como el template. |
+| Las semillas dependen solo de `id.length`: `caida` y `rocas` (5 caracteres) muestran los mismos rankings en detalle y salón | Limitación conocida, aceptada para mantener fidelidad con el template. Se resuelve cuando los rankings usen datos reales. |
 
 ---
 
