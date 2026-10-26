@@ -135,7 +135,7 @@ lib/
 
 - [ ] `npm run lint`, `npx tsc --noEmit` y `npm run build` terminan sin errores.
 - [ ] `/` muestra el hero "ARCADE VAULT" y 8 tarjetas de juego.
-- [ ] Escribir "ca" en el buscador deja solo la tarjeta CAÍDA.
+- [ ] Escribir "ca" en el buscador deja solo las tarjetas CAÍDA y ROCAS.
 - [ ] Pulsar el chip SHOOTER deja solo INVASORES y ROCAS.
 - [ ] Buscar "zzz" muestra "NO HAY RESULTADOS".
 - [ ] Pasar el mouse sobre una tarjeta la inclina; al salir vuelve a su posición.
