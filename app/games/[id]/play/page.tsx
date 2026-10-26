@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { GamePlayer } from "@/components/game-player";
 import { GAMES, getGame } from "@/lib/games";
 
-// Unknown ids must 404 with a real status, so params are read outside Suspense.
+// Opt out of instant-navigation validation: params are read outside Suspense so
+// unknown ids hit notFound() (themed 404; the HTTP status may still be 200 in prod).
 export const instant = false;
 
 export function generateStaticParams() {

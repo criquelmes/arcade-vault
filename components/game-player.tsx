@@ -7,11 +7,13 @@ import { saveScore, useUser } from "@/lib/session";
 
 type Run = { score: number; level: number };
 
-// Pure version of the template's score interval + level-up effect.
+const POINTS_PER_LEVEL = 2500;
+
+// Level goes up once each time the score crosses a multiple of POINTS_PER_LEVEL.
 function runReducer(run: Run, action: { type: "tick"; delta: number } | { type: "reset" }): Run {
   if (action.type === "reset") return { score: 0, level: 1 };
   const score = run.score + action.delta;
-  return { score, level: score % 2500 < 100 ? run.level + 1 : run.level };
+  return { score, level: 1 + Math.floor(score / POINTS_PER_LEVEL) };
 }
 
 export function GamePlayer({ game }: { game: Game }) {
