@@ -1,6 +1,6 @@
 # SPEC 01 — MVP visual de Arcade Vault
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** —
 > **Fecha:** 2026-10-26
 > **Objetivo:** Portar las cinco pantallas de `references/templates/` (biblioteca, detalle, reproductor, auth y salón de la fama) a rutas del App Router con datos mock, sin implementar ningún juego.
