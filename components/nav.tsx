@@ -5,11 +5,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { signOut, useUser } from "@/lib/session";
 
-type Section = "biblioteca" | "salon" | "auth";
+type Section = "inicio" | "biblioteca" | "salon" | "auth";
 
 function sectionOf(pathname: string | null): Section | null {
   if (pathname === null) return null;
-  if (pathname === "/" || pathname.startsWith("/games/")) return "biblioteca";
+  if (pathname === "/") return "inicio";
+  if (pathname === "/games" || pathname.startsWith("/games/")) return "biblioteca";
   if (pathname.startsWith("/hall-of-fame")) return "salon";
   if (pathname.startsWith("/login")) return "auth";
   return null;
@@ -32,7 +33,8 @@ export function NavView({ pathname }: { pathname: string | null }) {
           <div className="logo-text neon-cyan">ARCADE <span className="neon-magenta">VAULT</span></div>
         </Link>
         <div className="links">
-          <Link href="/" className={cls("biblioteca")}>Biblioteca</Link>
+          <Link href="/" className={cls("inicio")}>Inicio</Link>
+          <Link href="/games" className={cls("biblioteca")}>Biblioteca</Link>
           <Link href="/hall-of-fame" className={cls("salon")}>Salón de la Fama</Link>
         </div>
         <div className="spacer"></div>
@@ -51,7 +53,8 @@ export function NavView({ pathname }: { pathname: string | null }) {
       <div className={"av-mobile-backdrop" + (open ? " open" : "")} onClick={close}></div>
       <aside className={"av-mobile-panel" + (open ? " open" : "")} inert={!open}>
         <div className="pixel neon-cyan" style={{ fontSize: 11, marginBottom: 16 }}>MENÚ</div>
-        <Link href="/" className={cls("biblioteca")} onClick={close}>Biblioteca</Link>
+        <Link href="/" className={cls("inicio")} onClick={close}>Inicio</Link>
+        <Link href="/games" className={cls("biblioteca")} onClick={close}>Biblioteca</Link>
         <Link href="/hall-of-fame" className={cls("salon")} onClick={close}>Salón de la Fama</Link>
         <Link href="/login" className={cls("auth")} onClick={close}>{user ? "Cuenta" : "Iniciar Sesión"}</Link>
         <div style={{ flex: 1 }}></div>
