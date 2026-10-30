@@ -39,10 +39,10 @@ export default function Home() {
             <Link href="/games" className="btn xl pulse">▶  EXPLORAR JUEGOS</Link>
             <Link href="/login?mode=signup" className="btn xl magenta">✦  CREAR CUENTA</Link>
           </div>
-          <div className="hero-scroll" aria-hidden="true">
-            <span>DESLIZA</span>
-            <span className="arrow">▼</span>
-          </div>
+        </div>
+        <div className="hero-scroll" aria-hidden="true">
+          <span>DESLIZA</span>
+          <span className="arrow">▼</span>
         </div>
       </section>
 

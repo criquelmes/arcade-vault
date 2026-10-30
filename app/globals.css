@@ -204,7 +204,7 @@
   .av-nav .auth-btn { margin-left: 16px; }
   .av-nav .hamburger { display: none; }
 
-  @media (max-width: 899px) {
+  @media (max-width: 1199px) {
     .av-nav { padding: 12px 16px; }
     .av-nav .links { display: none; }
     .av-nav .coin-counter { display: none; }
@@ -1022,7 +1022,7 @@
   }
   .home-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .hero-scroll {
-    position: absolute; left: 50%; bottom: -20px; transform: translateX(-50%);
+    position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 3;
     font-family: var(--pixel); font-size: 9px; letter-spacing: 0.2em; color: var(--ink-faint);
     display: flex; flex-direction: column; align-items: center; gap: 8px;
   }
