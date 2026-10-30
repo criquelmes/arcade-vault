@@ -255,7 +255,8 @@
     box-shadow: 0 0 0 transparent, inset 0 0 0 transparent;
     cursor: pointer;
     transition: transform 80ms ease, box-shadow 160ms ease, color 160ms;
-    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    /* Polygon overshoots the box by 1px so straight borders survive subpixel widths/offsets */
+    clip-path: polygon(8px -1px, calc(100% + 1px) -1px, calc(100% + 1px) calc(100% - 8px), calc(100% - 8px) calc(100% + 1px), -1px calc(100% + 1px), -1px 8px);
   }
   .btn::before {
     content: ""; position: absolute; inset: 3px;
