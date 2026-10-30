@@ -1,12 +1,20 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { signIn, signOut } from "@/lib/session";
 
-export function AuthForm() {
+type Tab = "in" | "up";
+
+// Reads `?mode=signup` to open on the CREAR CUENTA tab. Must render inside <Suspense>.
+export function AuthFormFromParams() {
+  const mode = useSearchParams().get("mode");
+  return <AuthForm initialTab={mode === "signup" ? "up" : "in"} />;
+}
+
+export function AuthForm({ initialTab = "in" }: { initialTab?: Tab }) {
   const router = useRouter();
-  const [tab, setTab] = useState<"in" | "up">("in");
+  const [tab, setTab] = useState<Tab>(initialTab);
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
